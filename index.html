@@ -1062,14 +1062,28 @@
 
       emailInput.style.borderColor = '';
 
-      // Hide input row, show success
-      form.querySelector('.email-row').style.display   = 'none';
-      form.querySelector('.form-note').style.display   = 'none';
-      successMsg.classList.add('visible');
-
-      // In production, POST email to your backend here:
-      // fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email }),
-      //   headers: { 'Content-Type': 'application/json' } });
+      // Submit to Web3Forms
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'cf8fd120-826e-4bd6-ae09-3efc7484d636',
+          email: email,
+          subject: 'PolarisAI Waitlist Signup',
+          message: `New waitlist signup from: ${email}`
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Hide input row, show success
+        form.querySelector('.email-row').style.display   = 'none';
+        form.querySelector('.form-note').style.display   = 'none';
+        successMsg.classList.add('visible');
+      })
+      .catch(err => {
+        console.error('Form submission error:', err);
+        emailInput.style.borderColor = 'oklch(0.577 0.245 27.325)';
+      });
     });
   </script>
 
