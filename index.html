@@ -214,6 +214,10 @@
       z-index: 1;
       width: 100%;
       padding-block: 5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .hero-inner {
@@ -726,8 +730,7 @@
 
             <p class="hero-sub fade-up delay-2">
               PolarisAI is the business intelligence platform that turns complex data into
-              clear, actionable insights&nbsp;&mdash; powered by the latest in AI. Our full
-              platform launches very soon.
+              clear, actionable insights.
             </p>
 
             <!-- Countdown -->
@@ -776,7 +779,7 @@
                   Get Early Access
                 </button>
               </div>
-              <p class="form-note">No spam, ever. Unsubscribe at any time.</p>
+              <p class="form-note"></p>
 
               <!-- Success state (shown via JS) -->
               <div class="success-message" id="success-msg" role="status">
@@ -801,14 +804,16 @@
       <div class="container">
         <div class="social-strip-inner">
           <div class="strip-stat">
-            <div class="value">10×</div>
+            <div class="value">50×</div>
             <div class="label">Faster insights than manual reporting</div>
           </div>
-          <div class="strip-divider" aria-hidden="true"></div>
+
+          <!-- <div class="strip-divider" aria-hidden="true"></div>
           <div class="strip-stat">
             <div class="value">500+</div>
             <div class="label">Companies on the waitlist</div>
-          </div>
+          </div> -->
+
           <div class="strip-divider" aria-hidden="true"></div>
           <div class="strip-stat">
             <div class="value">99.9%</div>
@@ -959,33 +964,11 @@
             <span>Polaris<span class="logo-accent">AI</span></span>
           </a>
           <p>Transform your data into actionable insights with AI-powered business intelligence.</p>
-          <p class="footer-copy" style="margin-top:1rem;">
-            &copy; <span id="year"></span> PolarisAI. All rights reserved.
-          </p>
+          
         </div>
 
         <div>
           <div class="social-links">
-            <!-- Twitter / X -->
-            <a href="https://twitter.com" class="social-link" target="_blank"
-               rel="noopener noreferrer" aria-label="Twitter">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4l16 16M4 20L20 4"/>
-              </svg>
-            </a>
-            <!-- GitHub -->
-            <a href="https://github.com" class="social-link" target="_blank"
-               rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35
-                  6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65
-                  16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5
-                  4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9
-                  18.13V22"/>
-              </svg>
-            </a>
             <!-- LinkedIn -->
             <a href="https://linkedin.com" class="social-link" target="_blank"
                rel="noopener noreferrer" aria-label="LinkedIn">
@@ -1006,13 +989,16 @@
             </a>
           </div>
 
-          <p class="footer-copy" style="margin-top:1rem;text-align:right;">
+          <p class="footer-copy" style="margin-top:1rem;text-align:center;">
             <a href="mailto:hello@polarisai.com"
                style="color:var(--muted-fg);text-decoration:none;transition:color 0.2s;"
                onmouseover="this.style.color='var(--primary)'"
                onmouseout="this.style.color='var(--muted-fg)'">
               hello@polarisai.co.zw
             </a>
+          </p>
+          <p class="footer-copy" style="margin-top:1rem;">
+            &copy; <span id="year"></span> PolarisAI. All rights reserved.
           </p>
         </div>
 
