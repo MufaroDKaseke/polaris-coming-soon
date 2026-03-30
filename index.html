@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PolarisAI — Coming Soon</title>
   <meta name="description" content="PolarisAI is launching soon. Get early access to the AI-powered business intelligence platform that transforms your data into actionable insights." />
-  <!-- Open Graph -->
+  <!-- Open Graph & SEO -->
   <meta property="og:title" content="PolarisAI — Coming Soon" />
   <meta property="og:description" content="AI-Powered Business Intelligence. Navigate your data with precision." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="/logo.png" />
+  <meta property="og:image:width" content="496" />
+  <meta property="og:image:height" content="496" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/images/logo.png" />
+  <link rel="icon" type="image/png" href="/images/logo.png" sizes="496x496" />
+  <link rel="apple-touch-icon" href="/images/logo.png" sizes="496x496" />
   <!-- Google Fonts: Inter + Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,7 +57,7 @@
         --primary-hover:     oklch(0.60  0.100 185);
         --primary-fg:        oklch(0.98  0.005 220);
         --secondary:         oklch(0.28  0.040 195);
-        --muted:             oklch(0.16  0.020 220);
+        --muted:             #040f13;
         --muted-fg:          oklch(0.70  0.040 200);
         --accent:            oklch(0.68  0.060 200);
         --accent-light:      oklch(0.68  0.060 200 / 0.15);
@@ -89,7 +96,8 @@
     /* ─── Header ─────────────────────────────────────────────────── */
     header {
       border-bottom: 1px solid var(--border);
-      position: sticky;
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 50;
       background-color: var(--background);
@@ -159,7 +167,6 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: calc(100dvh - 4rem);
       display: flex;
       align-items: center;
     }
