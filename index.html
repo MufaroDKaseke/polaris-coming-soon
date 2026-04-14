@@ -135,6 +135,21 @@
 
     .logo-accent { color: var(--primary); }
 
+    .logo-beta {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.625rem;
+      font-weight: 600;
+      line-height: 1;
+      padding: 0.1875rem 0.4375rem;
+      border-radius: 9999px;
+      background-color: oklch(from var(--primary) l c h / 0.12);
+      color: var(--primary);
+      border: 1px solid oklch(from var(--primary) l c h / 0.22);
+      letter-spacing: 0.04em;
+      font-family: var(--font-sans);
+    }
+
     .header-badge {
       display: inline-flex;
       align-items: center;
@@ -691,6 +706,7 @@
             <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
           </svg>
           <span>Polaris<span class="logo-accent">AI</span></span>
+          <span class="logo-beta">Beta</span>
         </a>
 
         <div class="header-badge">
@@ -967,6 +983,7 @@
               <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
             </svg>
             <span>Polaris<span class="logo-accent">AI</span></span>
+            <span class="logo-beta">Beta</span>
           </a>
           <p>Talk to your data and get answers you can act on instantly</p>
           
