@@ -169,7 +169,7 @@
       background-color: oklch(0.20 0.020 220 / 0.85);
       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     }
-    .nav-inner { display: flex; height: 4.25rem; align-items: center; justify-content: space-between; gap: 1rem; }
+    .nav-inner { display: flex; height: 4rem; align-items: center; justify-content: space-between; gap: 1rem; }
     .logo {
       display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;
       font-size: 1.25rem; font-weight: 700; color: var(--foreground); transition: opacity 0.2s;
@@ -177,6 +177,9 @@
     .logo:hover { opacity: 0.85; }
     .logo-icon { width: 1.6rem; height: 1.6rem; color: var(--primary); flex-shrink: 0; }
     .logo-accent { color: var(--primary); }
+    /* Header logo runs smaller than the footer's, matching bi-web's h-16 header + text-lg/h-5 w-5 wordmark+icon */
+    header.site-header .logo { font-size: 1.125rem; }
+    header.site-header .logo-icon { width: 1.25rem; height: 1.25rem; }
     .logo-beta {
       display: inline-flex; align-items: center; font-size: 0.625rem; font-weight: 600;
       line-height: 1; padding: 0.2rem 0.5rem; border-radius: 9999px;
@@ -185,10 +188,10 @@
     }
     .nav-links { display: none; align-items: center; gap: 2rem; list-style: none; }
     .nav-links a {
-      font-size: 0.9375rem; font-weight: 500; text-decoration: none; color: var(--muted-foreground);
+      font-size: 0.9375rem; font-weight: 500; text-decoration: none; color: var(--foreground);
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--foreground); }
+    .nav-links a:hover { color: var(--primary); }
     .nav-right { display: flex; align-items: center; gap: 0.75rem; }
     .nav-cta { display: none; }
     .nav-toggle {
@@ -204,11 +207,16 @@
     }
     .nav-mobile-panel.open { display: flex; }
     .nav-mobile-panel a {
-      padding: 0.75rem 0.25rem; text-decoration: none; color: var(--muted-foreground); font-weight: 500;
+      padding: 0.75rem 0.25rem; text-decoration: none; color: var(--foreground); font-weight: 500;
       border-radius: 6px;
     }
-    .nav-mobile-panel a:hover { color: var(--foreground); }
+    .nav-mobile-panel a:hover { color: var(--primary); }
     .nav-mobile-panel .btn-primary { margin-top: 0.5rem; justify-content: center; }
+
+    /* Header CTA runs smaller than the page's default button, matching bi-web's h-9 header button */
+    .nav-cta.btn-primary, .nav-mobile-panel .btn-primary {
+      padding: 0.5rem 1.125rem; font-size: 0.8125rem; line-height: 1.2;
+    }
 
     @media (min-width: 900px) {
       .nav-links { display: flex; }
@@ -235,6 +243,10 @@
     .hero-heading { font-size: clamp(2.25rem, 5.5vw, 3.75rem); font-weight: 700; letter-spacing: -0.02em; }
     .hero-sub { font-size: clamp(1rem, 2.2vw, 1.1875rem); color: var(--muted-foreground); max-width: 36rem; margin-inline: auto; }
     .hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; justify-content: center; }
+    /* Hero CTAs run smaller than the page's default button, matching bi-web's h-10 "lg" button */
+    .hero-ctas .btn-primary, .hero-ctas .btn-secondary {
+      padding: 0.625rem 1.375rem; font-size: 0.875rem; line-height: 1.2;
+    }
 
     /* ─── Hero product demo (real product video, matches bi-web's hero video) ── */
     .hero-demo {
@@ -288,7 +300,10 @@
       border-radius: calc(var(--radius) + 6px); padding: 0.75rem;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
-    .connect-dashboard-mock img { border-radius: calc(var(--radius) - 2px); width: 100%; }
+    .connect-dashboard-mock img {
+      border-radius: calc(var(--radius) - 2px); width: 100%; height: auto;
+      aspect-ratio: 1 / 1; object-fit: cover;
+    }
 
     /* ─── Capabilities grid ──────────────────────────────────────── */
     .capabilities-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
@@ -423,7 +438,7 @@
     .final-cta h2 { font-size: clamp(1.875rem, 4.5vw, 2.75rem); line-height: 1.15; margin-bottom: 1rem; }
     .final-cta p { color: var(--muted-foreground); margin-bottom: 2rem; font-size: 1.0625rem; }
     .final-cta-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; justify-content: center; }
-    .btn-pill { border-radius: 9999px; padding: 0.875rem 2rem; }
+    .btn-pill { padding: 0.875rem 2rem; }
 
     /* ─── Footer ─────────────────────────────────────────────────── */
     footer.site-footer { background-color: var(--card); border-top: 1px solid var(--border); padding-block: 4rem 2rem; }
@@ -522,6 +537,8 @@
           <li><a href="#capabilities">Capabilities</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <!-- <li><a href="#security">Security</a></li> -->
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://demo.polarisai.co.zw/contact">Contact</a></li>
         </ul>
 
         <div class="nav-right">
@@ -541,6 +558,8 @@
         <a href="#capabilities">Capabilities</a>
         <a href="#pricing">Pricing</a>
         <!-- <a href="#security">Security</a> -->
+        <a href="#faq">FAQ</a>
+        <a href="https://demo.polarisai.co.zw/contact">Contact</a>
         <a href="https://demo.polarisai.co.zw/auth/signup" class="btn-primary">Join the beta</a>
       </nav>
     </div>
@@ -978,7 +997,7 @@
 
 
     <!-- ─── FAQ ─────────────────────────────────────────────────── -->
-    <section class="section section-alt" aria-labelledby="faq-heading">
+    <section class="section section-alt" id="faq" aria-labelledby="faq-heading">
       <div class="container">
         <div class="section-header reveal">
           <span class="eyebrow">FAQ</span>
